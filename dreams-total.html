@@ -24,13 +24,34 @@ padding:40px;
 border-radius:20px;
 }
 
-h1{text-align:center;font-size:38px;margin-bottom:30px;}
+h1{
+text-align:center;
+font-size:38px;
+margin-bottom:30px;
+}
 
-table{width:100%;border-collapse:collapse;}
+table{
+width:100%;
+border-collapse:collapse;
+}
 
-th{background:#343a6b;padding:18px;text-align:left;}
+th{
+background:#343a6b;
+padding:18px;
+text-align:left;
+}
 
-td{padding:18px;border-top:1px solid rgba(255,255,255,0.05);}
+td{
+padding:18px;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.back{
+display:inline-block;
+margin-bottom:20px;
+color:white;
+text-decoration:none;
+}
 
 </style>
 </head>
@@ -39,7 +60,7 @@ td{padding:18px;border-top:1px solid rgba(255,255,255,0.05);}
 
 <div class="container">
 
-<a href="index.html">⬅ Back to Home</a>
+<a class="back" href="index.html">⬅ Back to Home</a>
 
 <h1>Dreams Summary</h1>
 
@@ -76,13 +97,15 @@ td{padding:18px;border-top:1px solid rgba(255,255,255,0.05);}
 
 <script>
 
-const data=JSON.parse(localStorage.getItem("dreamStats"));
+const stats = JSON.parse(localStorage.getItem("dreamStats"));
 
-if(data){
-document.getElementById("goodCount").innerText=data.good;
-document.getElementById("badCount").innerText=data.bad;
-document.getElementById("totalCount").innerText=data.total;
-document.getElementById("dayCount").innerText=data.days;
+if(stats){
+
+document.getElementById("goodCount").innerText = stats.good;
+document.getElementById("badCount").innerText = stats.bad;
+document.getElementById("totalCount").innerText = stats.total;
+document.getElementById("dayCount").innerText = stats.days;
+
 }
 
 </script>
