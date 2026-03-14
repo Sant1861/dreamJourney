@@ -25,27 +25,13 @@ border-radius:18px;
 box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
-h1{
-text-align:center;
-font-size:38px;
-margin-bottom:35px;
-}
+h1{text-align:center;font-size:38px;margin-bottom:35px;}
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse;}
 
-th{
-background:#343a6b;
-padding:18px;
-text-align:left;
-}
+th{background:#343a6b;padding:18px;text-align:left;}
 
-td{
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.05);
-}
+td{padding:20px;border-top:1px solid rgba(255,255,255,0.05);}
 
 .back{
 display:inline-block;
@@ -74,65 +60,16 @@ font-weight:bold;
 <th>Dream Type</th>
 </tr>
 
-<tr>
-<td>Flying over mountains</td>
-<td>1 day ago</td>
-<td>Good</td>
-</tr>
-
-<tr>
-<td>Lost in maze</td>
-<td>2 days ago</td>
-<td>Bad</td>
-</tr>
-
-<tr>
-<td>Flying over mountains</td>
-<td>3 days ago</td>
-<td>Good</td>
-</tr>
-
-<tr>
-<td>Winning lottery</td>
-<td>4 days ago</td>
-<td>Good</td>
-</tr>
-
-<tr>
-<td>Being late to exam</td>
-<td>5 days ago</td>
-<td>Bad</td>
-</tr>
-
-<tr>
-<td>Lost in maze</td>
-<td>6 days ago</td>
-<td>Bad</td>
-</tr>
-
-<tr>
-<td>Swimming with dolphins</td>
-<td>7 days ago</td>
-<td>Good</td>
-</tr>
-
-<tr>
-<td>Flying over mountains</td>
-<td>8 days ago</td>
-<td>Good</td>
-</tr>
-
-<!-- <tr>
-<td>Time travel adventure</td>
-<td>9 days ago</td>
-<td>Good</td>
-</tr>
-
-<tr>
-<td>Monster chase</td>
-<td>10 days ago</td>
-<td>Bad</td>
-</tr> -->
+<tr><td>Flying over mountains</td><td>1 day ago</td><td>Good</td></tr>
+<tr><td>Lost in maze</td><td>1 day ago</td><td>Bad</td></tr>
+<tr><td>Winning lottery</td><td>2 days ago</td><td>Good</td></tr>
+<tr><td>Being late to exam</td><td>3 days ago</td><td>Bad</td></tr>
+<tr><td>Swimming with dolphins</td><td>4 days ago</td><td>Good</td></tr>
+<tr><td>Flying over mountains</td><td>5 days ago</td><td>Good</td></tr>
+<tr><td>Lost in maze</td><td>6 days ago</td><td>Bad</td></tr>
+<tr><td>Flying over mountains</td><td>6 days ago</td><td>Good</td></tr>
+<tr><td>Time travel adventure</td><td>7 days ago</td><td>Good</td></tr>
+<tr><td>Monster chase</td><td>7 days ago</td><td>Bad</td></tr>
 
 </table>
 
@@ -146,12 +83,16 @@ const rows=document.querySelectorAll("#dreamTable tr");
 
 let good=0;
 let bad=0;
+let days=new Set();
 
 rows.forEach((row,index)=>{
 
-if(index===0)return;
+if(index===0) return;
 
+const day=row.cells[1].innerText;
 const type=row.cells[2].innerText;
+
+days.add(day);
 
 if(type==="Good") good++;
 if(type==="Bad") bad++;
@@ -161,7 +102,8 @@ if(type==="Bad") bad++;
 const data={
 good:good,
 bad:bad,
-total:good+bad
+total:good+bad,
+days:days.size
 };
 
 localStorage.setItem("dreamStats",JSON.stringify(data));
