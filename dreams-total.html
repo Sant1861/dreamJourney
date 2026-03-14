@@ -97,6 +97,8 @@ text-decoration:none;
 
 <script>
 
+function loadSummary(){
+
 const stats = JSON.parse(localStorage.getItem("dreamStats"));
 
 if(stats){
@@ -107,6 +109,10 @@ document.getElementById("totalCount").innerText = stats.total;
 document.getElementById("dayCount").innerText = stats.days;
 
 }
+
+}
+
+window.onload = loadSummary;
 
 </script>
 
