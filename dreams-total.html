@@ -24,34 +24,13 @@ padding:40px;
 border-radius:20px;
 }
 
-h1{
-text-align:center;
-font-size:38px;
-margin-bottom:30px;
-}
+h1{text-align:center;font-size:38px;margin-bottom:30px;}
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse;}
 
-th{
-background:#343a6b;
-padding:18px;
-text-align:left;
-}
+th{background:#343a6b;padding:18px;text-align:left;}
 
-td{
-padding:18px;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.back{
-display:inline-block;
-margin-bottom:20px;
-color:white;
-text-decoration:none;
-}
+td{padding:18px;border-top:1px solid rgba(255,255,255,0.05);}
 
 </style>
 </head>
@@ -60,7 +39,7 @@ text-decoration:none;
 
 <div class="container">
 
-<a class="back" href="index.html">⬅ Back to Home</a>
+<a href="index.html">⬅ Back to Home</a>
 
 <h1>Dreams Summary</h1>
 
@@ -86,6 +65,11 @@ text-decoration:none;
 <td id="totalCount"></td>
 </tr>
 
+<tr>
+<td>Total Days</td>
+<td id="dayCount"></td>
+</tr>
+
 </table>
 
 </div>
@@ -95,11 +79,10 @@ text-decoration:none;
 const data=JSON.parse(localStorage.getItem("dreamStats"));
 
 if(data){
-
 document.getElementById("goodCount").innerText=data.good;
 document.getElementById("badCount").innerText=data.bad;
 document.getElementById("totalCount").innerText=data.total;
-
+document.getElementById("dayCount").innerText=data.days;
 }
 
 </script>
