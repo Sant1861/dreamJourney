@@ -1,22 +1,131 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Dream Portal</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at center,#1b2a4a,#0b162b);
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+/* stars background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:0.15;
+}
+
+/* main card */
+.card{
+    background:#0e1a32;
+    padding:60px;
+    border-radius:20px;
+    text-align:center;
+    width:450px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+/* star icon */
+.star{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* title */
+h1{
+    font-size:36px;
+    margin:10px 0;
+}
+
+/* subtitle */
+.subtitle{
+    color:#a9b3c7;
+    margin-bottom:30px;
+}
+
+/* numbers */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:30px;
+}
+
+.number{
+    font-size:32px;
+    color:#6c7bff;
+    font-weight:bold;
+}
+
+.label{
+    font-size:14px;
+    color:#a9b3c7;
+}
+
+/* button */
+.button{
+    background:#5f6cff;
+    color:white;
+    padding:16px 40px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:1px;
+    box-shadow:0 0 20px rgba(110,120,255,0.7);
+    transition:0.3s;
+}
+
+.button:hover{
+    background:#7a86ff;
+    box-shadow:0 0 30px rgba(110,120,255,1);
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="card">
+
+<div class="star">✨</div>
+
 <h1>Dream Portal</h1>
 
-<p>Welcome to the Dream Journey Portal</p>
+<p class="subtitle">Explore your dream journey</p>
 
-<a href="dreams-diary.html">Dream Diary</a>
+<div class="stats">
 
-<br><br>
+<div>
+<div class="number">10</div>
+<div class="label">Dreams</div>
+</div>
 
-<a href="dreams-total.html">Dream Summary</a>
+<div>
+<div class="number">7</div>
+<div class="label">Days</div>
+</div>
+
+</div>
+
+<a class="button" href="dreams-diary.html">MY DREAMS</a>
+
+</div>
 
 </body>
-
 </html>
