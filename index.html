@@ -82,12 +82,12 @@ cursor:pointer;
 <div class="stats">
 
 <div>
-<div class="number" id="dreamCount">0</div>
+<div class="number" id="dreamCount">10</div>
 <div class="label">Dreams</div>
 </div>
 
 <div>
-<div class="number" id="dayCount">0</div>
+<div class="number" id="dayCount">7</div>
 <div class="label">Days</div>
 </div>
 
@@ -101,12 +101,18 @@ cursor:pointer;
 
 <script>
 
+function loadStats(){
+
 const stats = JSON.parse(localStorage.getItem("dreamStats"));
 
 if(stats){
 document.getElementById("dreamCount").innerText = stats.total;
 document.getElementById("dayCount").innerText = stats.days;
 }
+
+}
+
+window.onload = loadStats;
 
 </script>
 
