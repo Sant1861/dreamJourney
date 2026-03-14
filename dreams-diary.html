@@ -7,67 +7,52 @@
 <style>
 
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle,#1b2a4a,#0b162b);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
+margin:0;
+font-family:Arial;
+background: radial-gradient(circle,#1b2a4a,#0b162b);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
 }
 
-/* card container */
 .container{
-    width:950px;
-    background:#0e1a32;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 0 40px rgba(0,0,0,0.6);
+width:950px;
+background:#0e1a32;
+padding:40px;
+border-radius:18px;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
-/* heading */
 h1{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:35px;
+text-align:center;
+font-size:38px;
+margin-bottom:35px;
 }
 
-/* table styling */
 table{
-    width:100%;
-    border-collapse:collapse;
-    overflow:hidden;
-    border-radius:12px;
+width:100%;
+border-collapse:collapse;
 }
 
-/* table header */
 th{
-    background:#343a6b;
-    padding:18px;
-    font-size:18px;
-    text-align:left;
+background:#343a6b;
+padding:18px;
+text-align:left;
 }
 
-/* table rows */
 td{
-    padding:20px;
-    border-top:1px solid rgba(255,255,255,0.05);
-    color:#d2d7e5;
+padding:20px;
+border-top:1px solid rgba(255,255,255,0.05);
 }
 
-/* hover effect */
-tr:hover{
-    background:#162345;
-}
-
-/* back button */
 .back{
-    display:inline-block;
-    margin-bottom:20px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
+display:inline-block;
+margin-bottom:20px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 </style>
@@ -81,7 +66,7 @@ tr:hover{
 
 <h1>Dreams Diary</h1>
 
-<table>
+<table id="dreamTable">
 
 <tr>
 <th>Dream Name</th>
@@ -153,18 +138,18 @@ tr:hover{
 
 </div>
 
-    <script>
+<script>
 
 function saveDreamData(){
 
-const rows=document.querySelectorAll("table tr");
+const rows=document.querySelectorAll("#dreamTable tr");
 
 let good=0;
 let bad=0;
 
 rows.forEach((row,index)=>{
 
-if(index===0) return;
+if(index===0)return;
 
 const type=row.cells[2].innerText;
 
