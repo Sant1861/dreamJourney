@@ -7,61 +7,67 @@
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:radial-gradient(circle,#1b2a4a,#0b162b);
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle,#1b2a4a,#0b162b);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
 }
 
+/* card container */
 .container{
-width:950px;
-background:#0e1a32;
-padding:40px;
-border-radius:18px;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
+    width:950px;
+    background:#0e1a32;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
+/* heading */
 h1{
-text-align:center;
-font-size:38px;
-margin-bottom:30px;
+    text-align:center;
+    font-size:38px;
+    margin-bottom:35px;
 }
 
+/* table styling */
 table{
-width:100%;
-border-collapse:collapse;
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
 }
 
+/* table header */
 th{
-background:#343a6b;
-padding:18px;
-text-align:left;
+    background:#343a6b;
+    padding:18px;
+    font-size:18px;
+    text-align:left;
 }
 
+/* table rows */
 td{
-padding:18px;
-border-top:1px solid rgba(255,255,255,0.05);
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:#d2d7e5;
 }
 
-button{
-padding:8px 14px;
-margin:5px;
-border:none;
-border-radius:6px;
-background:#6c7bff;
-color:white;
-cursor:pointer;
+/* hover effect */
+tr:hover{
+    background:#162345;
 }
 
-input,select{
-padding:8px;
-margin:5px;
-border-radius:6px;
-border:none;
+/* back button */
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
 }
 
 </style>
@@ -71,32 +77,11 @@ border:none;
 
 <div class="container">
 
-<a href="index.html" style="color:white;">⬅ Back to Home</a>
+<a class="back" href="index.html">⬅ Back to Home</a>
 
 <h1>Dreams Diary</h1>
 
-<div>
-
-<input id="dreamName" placeholder="Dream name">
-
-<select id="dreamType">
-<option>Good</option>
-<option>Bad</option>
-</select>
-
-<button onclick="addDream()">Add Dream</button>
-
-</div>
-
-<div style="margin-top:10px;">
-
-<button onclick="filterDreams('All')">All</button>
-<button onclick="filterDreams('Good')">Good</button>
-<button onclick="filterDreams('Bad')">Bad</button>
-
-</div>
-
-<table id="dreamTable">
+<table>
 
 <tr>
 <th>Dream Name</th>
@@ -117,52 +102,56 @@ border:none;
 </tr>
 
 <tr>
+<td>Flying over mountains</td>
+<td>3 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
 <td>Winning lottery</td>
 <td>4 days ago</td>
 <td>Good</td>
 </tr>
 
+<tr>
+<td>Being late to exam</td>
+<td>5 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Lost in maze</td>
+<td>6 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Swimming with dolphins</td>
+<td>7 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Flying over mountains</td>
+<td>8 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Time travel adventure</td>
+<td>9 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Monster chase</td>
+<td>10 days ago</td>
+<td>Bad</td>
+</tr>
+
 </table>
 
 </div>
-
-<script>
-
-function addDream(){
-
-const name=document.getElementById("dreamName").value;
-const type=document.getElementById("dreamType").value;
-
-const table=document.getElementById("dreamTable");
-
-const row=table.insertRow(-1);
-
-row.insertCell(0).innerText=name;
-row.insertCell(1).innerText="Today";
-row.insertCell(2).innerText=type;
-
-}
-
-function filterDreams(type){
-
-const rows=document.querySelectorAll("#dreamTable tr");
-
-rows.forEach((row,index)=>{
-
-if(index===0)return;
-
-const dreamType=row.cells[2].innerText;
-
-if(type==="All"||dreamType===type)
-row.style.display="";
-else
-row.style.display="none";
-
-});
-
-}
-
-</script>
 
 </body>
 </html>
