@@ -5,7 +5,6 @@
 <title>Dream Portal</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -26,15 +25,9 @@ width:450px;
 box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
-h1{
-font-size:36px;
-margin:10px 0;
-}
+h1{font-size:36px;margin:10px 0;}
 
-.subtitle{
-color:#a9b3c7;
-margin-bottom:30px;
-}
+.subtitle{color:#a9b3c7;margin-bottom:30px;}
 
 .stats{
 display:flex;
@@ -49,10 +42,7 @@ color:#6c7bff;
 font-weight:bold;
 }
 
-.label{
-font-size:14px;
-color:#a9b3c7;
-}
+.label{font-size:14px;color:#a9b3c7;}
 
 .button{
 display:inline-block;
@@ -65,11 +55,6 @@ text-decoration:none;
 font-weight:bold;
 cursor:pointer;
 }
-
-.button:hover{
-background:#7a86ff;
-}
-
 </style>
 </head>
 
@@ -86,24 +71,33 @@ background:#7a86ff;
 <div class="stats">
 
 <div>
-<div class="number">10</div>
+<div class="number" id="dreamCount">0</div>
 <div class="label">Dreams</div>
 </div>
 
 <div>
-<div class="number">7</div>
+<div class="number" id="dayCount">0</div>
 <div class="label">Days</div>
 </div>
 
 </div>
 
 <a class="button" href="dreams-diary.html">MY DREAMS</a>
-
 <br>
-
 <a class="button" href="dreams-total.html">VIEW SUMMARY</a>
 
 </div>
+
+<script>
+
+const data = JSON.parse(localStorage.getItem("dreamStats"));
+
+if(data){
+document.getElementById("dreamCount").innerText = data.total;
+document.getElementById("dayCount").innerText = data.days;
+}
+
+</script>
 
 </body>
 </html>
