@@ -73,27 +73,36 @@ text-decoration:none;
 
 <tr>
 <td>Good Dreams</td>
-<td>6</td>
+<td id="goodCount"></td>
 </tr>
 
 <tr>
 <td>Bad Dreams</td>
-<td>4</td>
+<td id="badCount"></td>
 </tr>
 
 <tr>
 <td>Total Dreams</td>
-<td>10</td>
-</tr>
-
-<tr>
-<td>Dreams This Week</td>
-<td>7</td>
+<td id="totalCount"></td>
 </tr>
 
 </table>
 
 </div>
+
+<script>
+
+const data=JSON.parse(localStorage.getItem("dreamStats"));
+
+if(data){
+
+document.getElementById("goodCount").innerText=data.good;
+document.getElementById("badCount").innerText=data.bad;
+document.getElementById("totalCount").innerText=data.total;
+
+}
+
+</script>
 
 </body>
 </html>
