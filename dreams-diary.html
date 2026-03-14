@@ -7,50 +7,67 @@
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:radial-gradient(circle,#1b2a4a,#0b162b);
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle,#1b2a4a,#0b162b);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
 }
 
+/* card container */
 .container{
-width:900px;
-background:#0e1a32;
-padding:40px;
-border-radius:20px;
+    width:950px;
+    background:#0e1a32;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
+/* heading */
 h1{
-text-align:center;
-font-size:38px;
-margin-bottom:30px;
+    text-align:center;
+    font-size:38px;
+    margin-bottom:35px;
 }
 
+/* table styling */
 table{
-width:100%;
-border-collapse:collapse;
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
 }
 
+/* table header */
 th{
-background:#343a6b;
-padding:18px;
-text-align:left;
+    background:#343a6b;
+    padding:18px;
+    font-size:18px;
+    text-align:left;
 }
 
+/* table rows */
 td{
-padding:18px;
-border-top:1px solid rgba(255,255,255,0.05);
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:#d2d7e5;
 }
 
+/* hover effect */
+tr:hover{
+    background:#162345;
+}
+
+/* back button */
 .back{
-display:inline-block;
-margin-bottom:20px;
-color:white;
-text-decoration:none;
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
 }
 
 </style>
@@ -85,8 +102,44 @@ text-decoration:none;
 </tr>
 
 <tr>
+<td>Flying over mountains</td>
+<td>3 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
 <td>Winning lottery</td>
 <td>4 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Being late to exam</td>
+<td>5 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Lost in maze</td>
+<td>6 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Swimming with dolphins</td>
+<td>7 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Flying over mountains</td>
+<td>8 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Time travel adventure</td>
+<td>9 days ago</td>
 <td>Good</td>
 </tr>
 
