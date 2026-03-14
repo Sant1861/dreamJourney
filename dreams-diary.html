@@ -153,5 +153,39 @@ tr:hover{
 
 </div>
 
+    <script>
+
+function saveDreamData(){
+
+const rows=document.querySelectorAll("table tr");
+
+let good=0;
+let bad=0;
+
+rows.forEach((row,index)=>{
+
+if(index===0) return;
+
+const type=row.cells[2].innerText;
+
+if(type==="Good") good++;
+if(type==="Bad") bad++;
+
+});
+
+const data={
+good:good,
+bad:bad,
+total:good+bad
+};
+
+localStorage.setItem("dreamStats",JSON.stringify(data));
+
+}
+
+saveDreamData();
+
+</script>
+
 </body>
 </html>
