@@ -1,15 +1,86 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Dream Diary</title>
+<meta charset="UTF-8">
+<title>Dreams Diary</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at center,#1b2a4a,#0b162b);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+/* star background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:0.15;
+}
+
+/* container */
+.container{
+    width:900px;
+    background:#0e1a32;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+
+/* title */
+h1{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+/* table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+th{
+    background:#343a6b;
+    padding:18px;
+    text-align:left;
+    font-size:18px;
+}
+
+td{
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:#d2d7e5;
+}
+
+tr:hover{
+    background:#162345;
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>Dreams Diary</h1>
 
-<table border="1">
+<table>
 
 <tr>
 <th>Dream Name</th>
@@ -30,6 +101,12 @@
 </tr>
 
 <tr>
+<td>Flying over mountains</td>
+<td>3 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
 <td>Winning lottery</td>
 <td>4 days ago</td>
 <td>Good</td>
@@ -41,12 +118,39 @@
 <td>Bad</td>
 </tr>
 
+<tr>
+<td>Lost in maze</td>
+<td>6 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Swimming with dolphins</td>
+<td>7 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Flying over mountains</td>
+<td>8 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Time travel adventure</td>
+<td>9 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Monster chase</td>
+<td>10 days ago</td>
+<td>Bad</td>
+</tr>
+
 </table>
 
-<br><br>
-
-<a href="index.html">Back to Home</a>
+</div>
 
 </body>
-
 </html>
