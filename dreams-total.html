@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <title>Dreams Summary</title>
 
 <style>
@@ -21,13 +20,7 @@ color:white;
 width:800px;
 background:#0e1a32;
 padding:40px;
-border-radius:20px;
-}
-
-h1{
-text-align:center;
-font-size:38px;
-margin-bottom:30px;
+border-radius:18px;
 }
 
 table{
@@ -38,19 +31,11 @@ border-collapse:collapse;
 th{
 background:#343a6b;
 padding:18px;
-text-align:left;
 }
 
 td{
 padding:18px;
 border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.back{
-display:inline-block;
-margin-bottom:20px;
-color:white;
-text-decoration:none;
 }
 
 </style>
@@ -60,9 +45,9 @@ text-decoration:none;
 
 <div class="container">
 
-<a class="back" href="index.html">⬅ Back to Home</a>
+<a href="index.html" style="color:white;">⬅ Back to Home</a>
 
-<h1>Dreams Summary</h1>
+<h1 style="text-align:center;">Dreams Summary</h1>
 
 <table>
 
@@ -73,27 +58,50 @@ text-decoration:none;
 
 <tr>
 <td>Good Dreams</td>
-<td>6</td>
+<td id="goodCount">0</td>
 </tr>
 
 <tr>
 <td>Bad Dreams</td>
-<td>4</td>
+<td id="badCount">0</td>
 </tr>
 
 <tr>
 <td>Total Dreams</td>
-<td>10</td>
-</tr>
-
-<tr>
-<td>Dreams This Week</td>
-<td>7</td>
+<td id="totalCount">0</td>
 </tr>
 
 </table>
 
 </div>
+
+<script>
+
+function calculateSummary(){
+
+const rows=document.querySelectorAll("#dreamTable tr");
+
+let good=0;
+let bad=0;
+
+rows.forEach((row,index)=>{
+
+if(index===0)return;
+
+const type=row.cells[2].innerText;
+
+if(type==="Good")good++;
+if(type==="Bad")bad++;
+
+});
+
+document.getElementById("goodCount").innerText=good;
+document.getElementById("badCount").innerText=bad;
+document.getElementById("totalCount").innerText=good+bad;
+
+}
+
+</script>
 
 </body>
 </html>
