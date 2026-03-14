@@ -1,37 +1,120 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Dream Summary</title>
+<meta charset="UTF-8">
+<title>Dreams Summary</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at center,#1b2a4a,#0b162b);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+/* star background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:0.15;
+}
+
+/* container card */
+.container{
+    width:800px;
+    background:#0e1a32;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+
+/* title */
+h1{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+/* table style */
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+th{
+    background:#343a6b;
+    padding:18px;
+    text-align:left;
+    font-size:18px;
+}
+
+td{
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    color:#d2d7e5;
+}
+
+tr:hover{
+    background:#162345;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Dream Summary</h1>
+<div class="container">
 
-<table border="1">
+<h1>Dreams Summary</h1>
+
+<table>
+
+<tr>
+<th>Dream Type</th>
+<th>Total Count</th>
+</tr>
 
 <tr>
 <td>Good Dreams</td>
-<td>2</td>
+<td>6</td>
 </tr>
 
 <tr>
 <td>Bad Dreams</td>
-<td>2</td>
+<td>4</td>
 </tr>
 
 <tr>
 <td>Total Dreams</td>
-<td>4</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Dreams This Week</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>Recurring Dreams</td>
+<td>2</td>
 </tr>
 
 </table>
 
-<br><br>
-
-<a href="index.html">Back to Home</a>
+</div>
 
 </body>
-
 </html>
