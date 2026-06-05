@@ -7,71 +7,71 @@
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:radial-gradient(circle,#1b2a4a,#0b162b);
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+    margin:0;
+    font-family:Arial;
+    background:radial-gradient(circle,#1b2a4a,#0b162b);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
 }
 
 .container{
-width:950px;
-background:#0e1a32;
-padding:40px;
-border-radius:18px;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
+    width:950px;
+    background:#0e1a32;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
 h1{
-text-align:center;
-font-size:38px;
-margin-bottom:35px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th{
-background:#343a6b;
-padding:18px;
-text-align:left;
-}
-
-td{
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.05);
+    text-align:center;
+    font-size:38px;
+    margin-bottom:25px;
 }
 
 .back{
-display:inline-block;
-margin-bottom:20px;
-color:white;
-text-decoration:none;
-font-weight:bold;
+    display:inline-block;
+    margin-bottom:20px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.btns{
-margin-bottom:20px;
+.buttons{
+    margin-bottom:20px;
 }
 
 button{
-background:#5f6cff;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-cursor:pointer;
-margin-right:10px;
-font-weight:bold;
+    background:#5f6cff;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-right:10px;
 }
 
 button:hover{
-opacity:0.9;
+    opacity:0.9;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#343a6b;
+    padding:18px;
+    text-align:left;
+}
+
+td{
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,0.08);
 }
 
 </style>
@@ -81,151 +81,159 @@ opacity:0.9;
 
 <div class="container">
 
-<a class="back" href="index.html">⬅ Back to Home</a>
+    <a class="back" href="index.html">⬅ Back to Home</a>
 
-<h1>Dreams Diary</h1>
+    <h1>Dreams Diary</h1>
 
-<div class="btns">
-<button onclick="removeLottery()">Remove Winning Lottery</button>
-<button onclick="addLottery()">Add Winning Lottery</button>
-</div>
+    <div class="buttons">
+        <button onclick="removeDream()">Remove Dream</button>
+        <button onclick="addDream()">Add Dream</button>
+    </div>
 
-<table id="dreamTable">
+    <table id="dreamTable">
 
-<tr>
-<th>Dream Name</th>
-<th>Days Ago</th>
-<th>Dream Type</th>
-</tr>
+        <tr>
+            <th>Dream Name</th>
+            <th>Days Ago</th>
+            <th>Dream Type</th>
+        </tr>
 
-<tr>
-<td>Flying over mountains</td>
-<td>1 day ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Flying over mountains</td>
+            <td>1 day ago</td>
+            <td>Good</td>
+        </tr>
 
-<tr id="lotteryRow">
-<td>Winning lottery</td>
-<td>1 day ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Winning lottery</td>
+            <td>1 day ago</td>
+            <td>Good</td>
+        </tr>
 
-<tr>
-<td>Swimming with dolphins</td>
-<td>2 days ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Swimming with dolphins</td>
+            <td>2 days ago</td>
+            <td>Good</td>
+        </tr>
 
-<tr>
-<td>Being late to exam</td>
-<td>3 days ago</td>
-<td>Bad</td>
-</tr>
+        <tr>
+            <td>Being late to exam</td>
+            <td>3 days ago</td>
+            <td>Bad</td>
+        </tr>
 
-<tr>
-<td>Monster chase</td>
-<td>4 days ago</td>
-<td>Bad</td>
-</tr>
+        <tr>
+            <td>Monster chase</td>
+            <td>4 days ago</td>
+            <td>Bad</td>
+        </tr>
 
-<tr>
-<td>Flying over mountains</td>
-<td>5 days ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Flying over mountains</td>
+            <td>5 days ago</td>
+            <td>Good</td>
+        </tr>
 
-<tr>
-<td>Lost in maze</td>
-<td>6 days ago</td>
-<td>Bad</td>
-</tr>
+        <tr>
+            <td>Lost in maze</td>
+            <td>6 days ago</td>
+            <td>Bad</td>
+        </tr>
 
-<tr>
-<td>Monster chase</td>
-<td>6 days ago</td>
-<td>Bad</td>
-</tr>
+        <tr>
+            <td>Monster chase</td>
+            <td>6 days ago</td>
+            <td>Bad</td>
+        </tr>
 
-<tr>
-<td>Time travel adventure</td>
-<td>7 days ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Time travel adventure</td>
+            <td>7 days ago</td>
+            <td>Good</td>
+        </tr>
 
-<tr>
-<td>Flying over mountains</td>
-<td>7 days ago</td>
-<td>Good</td>
-</tr>
+        <tr>
+            <td>Flying over mountains</td>
+            <td>7 days ago</td>
+            <td>Good</td>
+        </tr>
 
-</table>
+    </table>
 
 </div>
 
 <script>
 
-let lotteryData = `
-<tr id="lotteryRow">
-<td>Winning lottery</td>
-<td>1 day ago</td>
-<td>Good</td>
-</tr>
-`;
+let removedDreams = [];
 
-function removeLottery(){
+function removeDream(){
 
-const row = document.getElementById("lotteryRow");
+    const rows = document.querySelectorAll("#dreamTable tr");
 
-if(row){
-row.remove();
-calculateStats();
+    if(rows.length <= 1){
+        alert("No more dreams to remove!");
+        return;
+    }
+
+    const lastRow = rows[rows.length - 1];
+
+    removedDreams.push(lastRow.outerHTML);
+
+    lastRow.remove();
+
+    calculateStats();
 }
 
-}
+function addDream(){
 
-function addLottery(){
+    if(removedDreams.length === 0){
+        alert("No removed dreams to add!");
+        return;
+    }
 
-if(document.getElementById("lotteryRow")) return;
+    const table = document.getElementById("dreamTable");
 
-const table = document.getElementById("dreamTable");
+    table.insertAdjacentHTML(
+        "beforeend",
+        removedDreams.pop()
+    );
 
-table.insertAdjacentHTML("beforeend", lotteryData);
-
-calculateStats();
-
+    calculateStats();
 }
 
 function calculateStats(){
 
-const rows = document.querySelectorAll("#dreamTable tr");
+    const rows = document.querySelectorAll("#dreamTable tr");
 
-let good = 0;
-let bad = 0;
-let uniqueDays = new Set();
+    let good = 0;
+    let bad = 0;
+    let uniqueDays = new Set();
 
-rows.forEach((row,index)=>{
+    rows.forEach((row,index)=>{
 
-if(index===0) return;
+        if(index === 0) return;
 
-const day = row.cells[1].innerText;
-const type = row.cells[2].innerText;
+        const day = row.cells[1].innerText;
+        const type = row.cells[2].innerText;
 
-uniqueDays.add(day);
+        uniqueDays.add(day);
 
-if(type==="Good") good++;
-if(type==="Bad") bad++;
+        if(type === "Good") good++;
+        if(type === "Bad") bad++;
 
-});
+    });
 
-const stats = {
-good:good,
-bad:bad,
-total:good+bad,
-days:uniqueDays.size
-};
+    const stats = {
+        good: good,
+        bad: bad,
+        total: good + bad,
+        days: uniqueDays.size
+    };
 
-localStorage.setItem("dreamStats",JSON.stringify(stats));
-
+    localStorage.setItem(
+        "dreamStats",
+        JSON.stringify(stats)
+    );
 }
 
 window.onload = calculateStats;
