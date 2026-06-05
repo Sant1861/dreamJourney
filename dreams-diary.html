@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Arial;
-background: radial-gradient(circle,#1b2a4a,#0b162b);
+background:radial-gradient(circle,#1b2a4a,#0b162b);
 min-height:100vh;
 display:flex;
 align-items:center;
@@ -55,6 +55,25 @@ text-decoration:none;
 font-weight:bold;
 }
 
+.btns{
+margin-bottom:20px;
+}
+
+button{
+background:#5f6cff;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+margin-right:10px;
+font-weight:bold;
+}
+
+button:hover{
+opacity:0.9;
+}
+
 </style>
 </head>
 
@@ -66,6 +85,11 @@ font-weight:bold;
 
 <h1>Dreams Diary</h1>
 
+<div class="btns">
+<button onclick="removeLottery()">Remove Winning Lottery</button>
+<button onclick="addLottery()">Add Winning Lottery</button>
+</div>
+
 <table id="dreamTable">
 
 <tr>
@@ -74,28 +98,102 @@ font-weight:bold;
 <th>Dream Type</th>
 </tr>
 
-<tr><td>Flying over mountains</td><td>1 day ago</td><td>Good</td></tr>
-<tr><td>Winning lottery</td><td>1 day ago</td><td>Good</td></tr>
+<tr>
+<td>Flying over mountains</td>
+<td>1 day ago</td>
+<td>Good</td>
+</tr>
 
-<tr><td>Swimming with dolphins</td><td>2 days ago</td><td>Good</td></tr>
+<tr id="lotteryRow">
+<td>Winning lottery</td>
+<td>1 day ago</td>
+<td>Good</td>
+</tr>
 
-<tr><td>Being late to exam</td><td>3 days ago</td><td>Bad</td></tr>
+<tr>
+<td>Swimming with dolphins</td>
+<td>2 days ago</td>
+<td>Good</td>
+</tr>
 
-<tr><td>Monster chase</td><td>4 days ago</td><td>Bad</td></tr>
+<tr>
+<td>Being late to exam</td>
+<td>3 days ago</td>
+<td>Bad</td>
+</tr>
 
-<tr><td>Flying over mountains</td><td>5 days ago</td><td>Good</td></tr>
+<tr>
+<td>Monster chase</td>
+<td>4 days ago</td>
+<td>Bad</td>
+</tr>
 
-<tr><td>Lost in maze</td><td>6 days ago</td><td>Bad</td></tr>
-<tr><td>Monster chase</td><td>6 days ago</td><td>Bad</td></tr>
+<tr>
+<td>Flying over mountains</td>
+<td>5 days ago</td>
+<td>Good</td>
+</tr>
 
-<tr><td>Time travel adventure</td><td>7 days ago</td><td>Good</td></tr>
-<tr><td>Flying over mountains</td><td>7 days ago</td><td>Good</td></tr>
+<tr>
+<td>Lost in maze</td>
+<td>6 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Monster chase</td>
+<td>6 days ago</td>
+<td>Bad</td>
+</tr>
+
+<tr>
+<td>Time travel adventure</td>
+<td>7 days ago</td>
+<td>Good</td>
+</tr>
+
+<tr>
+<td>Flying over mountains</td>
+<td>7 days ago</td>
+<td>Good</td>
+</tr>
 
 </table>
 
 </div>
 
 <script>
+
+let lotteryData = `
+<tr id="lotteryRow">
+<td>Winning lottery</td>
+<td>1 day ago</td>
+<td>Good</td>
+</tr>
+`;
+
+function removeLottery(){
+
+const row = document.getElementById("lotteryRow");
+
+if(row){
+row.remove();
+calculateStats();
+}
+
+}
+
+function addLottery(){
+
+if(document.getElementById("lotteryRow")) return;
+
+const table = document.getElementById("dreamTable");
+
+table.insertAdjacentHTML("beforeend", lotteryData);
+
+calculateStats();
+
+}
 
 function calculateStats(){
 
@@ -107,26 +205,26 @@ let uniqueDays = new Set();
 
 rows.forEach((row,index)=>{
 
-if(index === 0) return;
+if(index===0) return;
 
 const day = row.cells[1].innerText;
 const type = row.cells[2].innerText;
 
 uniqueDays.add(day);
 
-if(type === "Good") good++;
-if(type === "Bad") bad++;
+if(type==="Good") good++;
+if(type==="Bad") bad++;
 
 });
 
 const stats = {
-good: good,
-bad: bad,
-total: good + bad,
-days: uniqueDays.size
+good:good,
+bad:bad,
+total:good+bad,
+days:uniqueDays.size
 };
 
-localStorage.setItem("dreamStats", JSON.stringify(stats));
+localStorage.setItem("dreamStats",JSON.stringify(stats));
 
 }
 
